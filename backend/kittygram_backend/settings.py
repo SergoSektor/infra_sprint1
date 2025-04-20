@@ -1,7 +1,14 @@
 import os
 from pathlib import Path
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Замените стандартное значение 'static' на 'static_backend',
+# чтобы не было конфликта запросов к статике фронтенда и бэкенда.
+STATIC_URL = '/static_backend/'
+# Укажите директорию, куда бэкенд-приложение должно сложить статику.
+STATIC_ROOT = BASE_DIR / 'static_backend'
 
 SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
 
